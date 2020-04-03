@@ -1,5 +1,5 @@
 @                   3600 IN SOA     nsx.gitns.com. domains.nzt.ventures. (
-                                      2020040303   ; serial
+                                      2020040304   ; serial
                                       5m           ; refresh
                                       5m           ; retry
                                       1w           ; expire
@@ -21,8 +21,8 @@ _redirect.code                          3600 IN TXT     "v=txtv0;type=host;to=ht
 _redirect.issues                        3600 IN TXT     "v=txtv0;type=host;to=https://github.com/txtdirect/txtdirect/issues"
 _redirect.license                       3600 IN TXT     "v=txtv0;type=host;to=https://github.com/txtdirect/txtdirect/blob/master/LICENSE"
 
-_redirect.releases                      3600 IN TXT     "v=txtv0;type=path;to=https://github.com/txtdirect/txtdirect/releases/"
-_redirect._.releases                    3600 IN TXT     "v=txtv0;type=host;re=^((([v][0-9]+|[0-9]+)\\.([0-9]+)\\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)$;to=https://github.com/txtdirect/txtdirect/releases/tag/{1}"
+_redirect.releases                      3600 IN TXT     "v=txtv0;type=path;re=^((([v][0-9]+|[0-9]+)\\.([0-9]+)\\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)$;to=https://github.com/txtdirect/txtdirect/releases/"
+_redirect._.releases                    3600 IN TXT     "v=txtv0;type=host;to=https://github.com/txtdirect/txtdirect/releases/tag/{1}"
 
 _redirect.examples                      3600 IN TXT     "v=txtv0;type=host;to=https://about.txtdirect.org/docs/examples/"
 _redirect.docs                          3600 IN TXT     "v=txtv0;type=host;to=https://about.txtdirect.org/docs/"

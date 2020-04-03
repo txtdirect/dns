@@ -1,5 +1,5 @@
 @                   3600 IN SOA     nsx.gitns.com. domains.nzt.ventures. (
-                                      2020032302   ; serial
+                                      2020040301   ; serial
                                       5m           ; refresh
                                       5m           ; retry
                                       1w           ; expire

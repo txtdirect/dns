@@ -1,5 +1,5 @@
 @                   3600 IN SOA     nsx.gitns.com. domains.nzt.ventures. (
-                                      2020040305   ; serial
+                                      2020040306   ; serial
                                       5m           ; refresh
                                       5m           ; retry
                                       1w           ; expire
@@ -22,6 +22,7 @@ _redirect.issues                        3600 IN TXT     "v=txtv0;type=host;to=ht
 _redirect.license                       3600 IN TXT     "v=txtv0;type=host;to=https://github.com/txtdirect/txtdirect/blob/master/LICENSE"
 
 _redirect.releases                      3600 IN TXT     "v=txtv0;type=path;to=https://github.com/txtdirect/txtdirect/releases/"
+_redirect._.releases                    3600 IN TXT     "v=txtv0;type=host;to=https://github.com/txtdirect/txtdirect/releases/"
 
 ;_redirect.releases                      3600 IN TXT     "v=txtv0;type=path;re=^((([v][0-9]+|[0-9]+)\\.([0-9]+)\\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)$;to=https://github.com/txtdirect/txtdirect/releases/"
 ;_redirect._.releases                    3600 IN TXT     "v=txtv0;type=host;to=https://github.com/txtdirect/txtdirect/releases/tag/{2}"

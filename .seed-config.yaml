@@ -1,0 +1,44 @@
+project:
+  name: "TXTDirect DNS"
+  state: "stable"
+  image: ""
+  website: "https://about.txtdirect.org"
+  oneLiner: "TXTDirect DNS Zone Files"
+  description: |
+    TXTDirect related zone files served by [gitns.com](https://about.gitns.com).
+    DNS entries are stored as per zone files using the bind format.
+  version: "v0.1.0"
+  mainLicense: "CCByNcSa"
+
+contributionLinks:
+  issueTemplate: "/.github/ISSUE_TEMPLATE.md"
+  starterIssues: "https://github.com/txtdirect/dns/labels/starter%20issue"
+
+emails:
+  security: "security@okkur.org"
+  coc: "coc@okkur.org"
+
+copyright:
+  year: "2019"
+
+cla:
+  copyrightHolder: "nzt.ventures GmbH"
+  mail: "legal@nzt.ventures"
+
+maintainers:
+  - name: "Michael Grosser"
+    nick: "stp-ip"
+
+repo:
+  link: "https://git.txtdirect.org/dns"
+  type: "Github"
+
+badges:
+  - image: "https://img.shields.io/badge/state-stable-green.svg"
+    alt: "state"
+  - image: "https://img.shields.io/github/license/txtdirect/dns.svg"
+    link: "LICENSE"
+    alt: "license"
+
+reposeed:
+  configVersion: "v1"

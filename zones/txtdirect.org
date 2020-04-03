@@ -1,0 +1,86 @@
+@                   3600 IN SOA     nsx.gitns.com. domains.nzt.ventures. (
+                                      2020032302   ; serial
+                                      5m           ; refresh
+                                      5m           ; retry
+                                      1w           ; expire
+                                      12h    )     ; minimum
+
+@                  86400 IN NS      nsx.gitns.com.
+@                  86400 IN NS      nsx.gitns.nl.
+@                  86400 IN NS      nsx.gitns.net.
+@                  86400 IN NS      nsx.gitns.org.
+@                  86400 IN NS      nsx.gitns.io.
+
+
+; short links + default redirect
+@                  86400 IN A       45.85.238.5
+@                  86400 IN AAAA    2a0e:c885:5::1
+
+_redirect                               3600 IN TXT     "v=txtv0;type=path;>Strict-Transport-Security=max-age%3D163072000%3B%20includeSubDomains%3B%20preload;to=https://about.txtdirect.org"
+_redirect.code                          3600 IN TXT     "v=txtv0;type=host;to=https://github.com/txtdirect/txtdirect/"
+_redirect.issues                        3600 IN TXT     "v=txtv0;type=host;to=https://github.com/txtdirect/txtdirect/issues"
+_redirect.license                       3600 IN TXT     "v=txtv0;type=host;to=https://github.com/txtdirect/txtdirect/blob/master/LICENSE"
+
+_redirect.releases                      3600 IN TXT     "v=txtv0;type=host;to=https://github.com/txtdirect/txtdirect/releases/"
+_redirect._.releases                    3600 IN TXT     "v=txtv0;type=path;re=^((([v][0-9]+|[0-9]+)\\.([0-9]+)\\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)$;to=https://github.com/txtdirect/txtdirect/releases/tag/{1}"
+
+_redirect.examples                      3600 IN TXT     "v=txtv0;type=host;to=https://about.txtdirect.org/docs/examples/"
+_redirect.docs                          3600 IN TXT     "v=txtv0;type=host;to=https://about.txtdirect.org/docs/"
+_redirect.docs-license                  3600 IN TXT     "v=txtv0;type=host;to=https://github.com/txtdirect/website/blob/master/LICENSE"
+
+_redirect.hosted                        3600 IN TXT     "v=txtv0;type=host;to=https://about.txtdirect.org/hosted/"
+
+
+www                86400 IN CNAME   txtd.io.
+_redirect.www      86400 IN TXT     "v=txtv0;type=host;>Strict-Transport-Security=max-age%3D163072000;to=https://about.txtdirect.org{uri}"
+
+about              86400 IN CNAME   txtdirect.netlify.com.
+
+; microsoft webmasters
+8d4c3156ac5d4fbda0b753a514f59629.about 3600 IN CNAME verify.bing.com.
+
+@                   3600 IN MX 1    ASPMX.L.google.com.
+@                   3600 IN MX 5    ALT1.ASPMX.L.GOOGLE.COM.
+@                   3600 IN MX 5    ALT2.ASPMX.L.GOOGLE.COM.
+@                   3600 IN MX 10   ASPMX2.GOOGLEMAIL.COM.
+@                   3600 IN MX 10   ASPMX3.GOOGLEMAIL.COM.
+@                   3600 IN TXT     "v=spf1 include:_spf.google.com ~all"
+
+@                   3600 IN TXT     "google-site-verification=PPEYT11jjpePq_vTu3KLCOr7l5Soq5IvWVGjSpiD4pk"
+
+@                    300 IN CAA 0   issue "letsencrypt.org"
+@                    300 IN CAA 0   issuewild ";"
+@                    300 IN CAA 0   iodef "mailto:caa@nzt.ventures"
+
+; containers
+;containers TODO: specific path based image?!
+$ORIGIN c.txtdirect.org.
+@                                     86400 IN CNAME   docker.txtd.io.
+_redirect                               300 IN TXT     "v=txtv0;type=path;>Strict-Transport-Security=max-age%3D163072000;to=https://about.txtdirect.org"
+_redirect.txtdirect                     300 IN TXT     "v=txtv0;type=dockerv2;website=https://about.txtdirect.org;to=https://gcr.io/k8s-staging-txtdirect/txtdirect"
+_redirect.txtdirect.dev                 300 IN TXT     "v=txtv0;type=dockerv2;website=https://about.txtdirect.org;to=https://gcr.io/txtdirect-223710/txtdirect"
+
+$ORIGIN plain.c.txtdirect.org.
+@                                     86400 IN CNAME   docker.txtd.io.
+_redirect                               300 IN TXT     "v=txtv0;type=dockerv2;website=https://about.txtdirect.org;to=https://gcr.io"
+
+; git
+$ORIGIN git.txtdirect.org.
+@                                     86400 IN CNAME   git.txtd.io.
+_redirect                               300 IN TXT     "v=txtv0;type=path;>Strict-Transport-Security=max-age%3D163072000;to=https://about.txtdirect.org"
+_redirect.txtdirect                     300 IN TXT     "v=txtv0;type=git;website=https://github.com/txtdirect/txtdirect;to=https://github.com/txtdirect/txtdirect.git"
+_redirect.dns                           300 IN TXT     "v=txtv0;type=git;website=https://github.com/txtdirect/dns;to=https://github.com/txtdirect/dns.git"
+_redirect.starter                       300 IN TXT     "v=txtv0;type=git;website=https://github.com/txtdirect/starter;to=https://github.com/txtdirect/starter.git"
+
+
+; go packages
+$ORIGIN go.txtdirect.org.
+@                                     86400 IN CNAME   gometa.txtd.io.
+_redirect                               300 IN TXT     "v=txtv0;type=path;>Strict-Transport-Security=max-age%3D163072000;to=https://about.txtdirect.org"
+_redirect.txtdirect                     300 IN TXT     "v=txtv0;type=gometa;to=https://github.com/txtdirect/txtdirect"
+
+
+; legacy short link redirect
+$ORIGIN s.txtdirect.org.
+@                                     86400 IN CNAME   txtd.io.
+_redirect                             86400 IN TXT     "v=txtv0;type=host;>Strict-Transport-Security=max-age%3D163072000;to=https://txtdirect.org{uri}"

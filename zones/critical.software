@@ -1,0 +1,35 @@
+@                   3600 IN SOA     ns.gitns.com. domains.nzt.ventures. (
+                                      2020012401   ; serial
+                                      5m           ; refresh
+                                      5m           ; retry
+                                      1w           ; expire
+                                      12h    )     ; minimum
+
+@                  86400 IN NS      ns-cloud-b1.googledomains.com.
+@                  86400 IN NS      ns-cloud-b2.googledomains.com.
+@                  86400 IN NS      ns-cloud-b3.googledomains.com.
+@                  86400 IN NS      ns-cloud-b4.googledomains.com.
+
+; redirect
+@                  86400 IN A       45.85.238.5
+@                  86400 IN AAAA    2a0e:c885:5::1
+
+_redirect          86400 IN TXT     "v=txtv0;type=host;>Strict-Transport-Security=max-age%3D163072000%3B%20includeSubDomains%3B%20preload;to=https://about.txtdirect.org"
+
+@                    300 IN CAA 0   issue "letsencrypt.org"
+@                    300 IN CAA 0   issuewild "letsencrypt.org"
+@                    300 IN CAA 0   iodef "mailto:caa@nzt.ventures"
+
+; catch-all showcase
+*                                   86400 IN A       45.85.238.5
+*                                   86400 IN AAAA    2a0e:c885:5::1
+_redirect._                         86400 IN TXT     "v=txtv0;type=host;to=https://www.google.com/search?btnI=1&q={label1}"
+
+
+; presentation related
+
+; kubecon seattle talk 2018
+*.kubecon                           86400 IN A       45.85.238.5
+*.kubecon                           86400 IN AAAA    2a0e:c885:5::1
+
+_redirect._.kubecon                 86400 IN TXT     "v=txtv0;type=host;to=https://www.google.com/search?btnI=1&q={label1}"

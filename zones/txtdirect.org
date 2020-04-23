@@ -57,7 +57,7 @@ about              86400 IN CNAME   txtdirect.netlify.com.
 ;containers TODO: specific path based image?!
 $ORIGIN c.txtdirect.org.
 @                                     86400 IN CNAME   docker.txtd.io.
-_redirect                               300 IN TXT     "v=txtv0;type=dockerv2;https://gcr.io/txtdirect-223710/"
+_redirect                               300 IN TXT     "v=txtv0;type=dockerv2;to=https://gcr.io/txtdirect-223710/"
 
 ;_redirect                               300 IN TXT     "v=txtv0;type=path;>Strict-Transport-Security=max-age%3D163072000;to=https://about.txtdirect.org"
 ;_redirect.txtdirect                     300 IN TXT     "v=txtv0;type=dockerv2;website=https://about.txtdirect.org;to=https://gcr.io/k8s-staging-txtdirect/txtdirect"

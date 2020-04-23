@@ -1,5 +1,5 @@
 @                   3600 IN SOA     nsx.gitns.com. domains.nzt.ventures. (
-                                      2020042302   ; serial
+                                      2020042303   ; serial
                                       5m           ; refresh
                                       5m           ; retry
                                       1w           ; expire
@@ -57,9 +57,11 @@ about              86400 IN CNAME   txtdirect.netlify.com.
 ;containers TODO: specific path based image?!
 $ORIGIN c.txtdirect.org.
 @                                     86400 IN CNAME   docker.txtd.io.
-_redirect                               300 IN TXT     "v=txtv0;type=path;>Strict-Transport-Security=max-age%3D163072000;to=https://about.txtdirect.org"
-_redirect.txtdirect                     300 IN TXT     "v=txtv0;type=dockerv2;website=https://about.txtdirect.org;to=https://gcr.io/k8s-staging-txtdirect/txtdirect"
-_redirect.txtdirect.dev                 300 IN TXT     "v=txtv0;type=dockerv2;website=https://about.txtdirect.org;to=https://gcr.io/txtdirect-223710/txtdirect"
+_redirect                               300 IN TXT     "v=txtv0;type=dockerv2;https://gcr.io/txtdirect-223710/"
+
+;_redirect                               300 IN TXT     "v=txtv0;type=path;>Strict-Transport-Security=max-age%3D163072000;to=https://about.txtdirect.org"
+;_redirect.txtdirect                     300 IN TXT     "v=txtv0;type=dockerv2;website=https://about.txtdirect.org;to=https://gcr.io/k8s-staging-txtdirect/txtdirect"
+;_redirect.txtdirect.dev                 300 IN TXT     "v=txtv0;type=dockerv2;website=https://about.txtdirect.org;to=https://gcr.io/txtdirect-223710/txtdirect"
 
 $ORIGIN plain.c.txtdirect.org.
 @                                     86400 IN CNAME   docker.txtd.io.

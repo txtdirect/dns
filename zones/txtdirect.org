@@ -74,6 +74,7 @@ _redirect                               300 IN TXT     "v=txtv0;type=path;>Stric
 _redirect.txtdirect                     300 IN TXT     "v=txtv0;type=git;website=https://github.com/txtdirect/txtdirect;to=https://github.com/txtdirect/txtdirect.git"
 _redirect.dns                           300 IN TXT     "v=txtv0;type=git;website=https://github.com/txtdirect/dns;to=https://github.com/txtdirect/dns.git"
 _redirect.starter                       300 IN TXT     "v=txtv0;type=git;website=https://github.com/txtdirect/starter;to=https://github.com/txtdirect/starter.git"
+_redirect.website                       300 IN TXT     "v=txtv0;type=git;website=https://github.com/txtdirect/website;to=https://github.com/txtdirect/website.git"
 
 
 ; go packages

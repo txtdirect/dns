@@ -1,5 +1,5 @@
 @                   3600 IN SOA     nsx.gitns.com. domains.nzt.ventures. (
-                                      2021050401   ; serial
+                                      2021050402   ; serial
                                       5m           ; refresh
                                       5m           ; retry
                                       1w           ; expire
@@ -48,6 +48,7 @@ about              86400 IN CNAME   txtdirect.netlify.com.
 @                   3600 IN TXT     "v=spf1 include:_spf.google.com ~all"
 
 @                   3600 IN TXT     "google-site-verification=uc0i3lvLsC3IsCkd_FfUVgwa2Dl95ousRUyH-swc1gI"
+google._domainkey   3600 IN TXT     "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlmYz/aifVkUDxg6D9QWKUvA4KHQodUuzAUhbJvDaeLEPn3TADMLykrQntQy2JajLGJggz/OiF169Ui8qTL5BqlQbCc0KvAOmGwtcZ1ScqkhVrDdmY76ImaSr3P1LhXTt1tzE7kDGgVmmVx7DmkJlWjvVvzdJRXOED8nD6fZSeR43DUpI7l5WBaurjP88mIo95/pdGOj4w1/dl/S87S837DQqXeFckJtQ8ntJKPLZVjwiRXwc78ezdxDSiJ1v0Mv171oxDYda1rmbzWRjMycy722imQWrXhNu1oIGhaxg+f9f2J4vctXPM8BEW3D9M6E39ByDnWWJ8QhWz9zZzkMurQIDAQAB"
 
 @                    300 IN CAA 0   issue "letsencrypt.org"
 @                    300 IN CAA 0   issuewild ";"

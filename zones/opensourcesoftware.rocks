@@ -1,9 +1,11 @@
 @                   3600 IN SOA     ns.gitns.com. domains.nzt.ventures. (
-                                      2020012401   ; serial
+                                      2020012403   ; serial
                                       5m           ; refresh
                                       5m           ; retry
                                       1w           ; expire
                                       12h    )     ; minimum
+
+; currently manually managed via Google Cloud DNS and manually synced
 
 @                  86400 IN NS      ns-cloud-a1.googledomains.com.
 @                  86400 IN NS      ns-cloud-a2.googledomains.com.
@@ -19,7 +21,12 @@ _redirect          86400 IN TXT     "v=txtv0;type=host;>Strict-Transport-Securit
 ; catch-all showcase
 *                  86400 IN A       45.85.238.5
 *                  86400 IN AAAA    2a0e:c885:5::1
-_redirect._        86400 IN TXT     "v=txtv0;type=host;to=https://www.google.com/search?btnI=1&q={label1}"
+
+; prevent multiple level wildcards
+*.*                86400 IN A       127.0.0.1
+*.*                86400 IN AAAA    ::1
+
+_redirect._         3600 IN TXT     "v=txtv0;type=host;to=https://www.google.com/search?btnI=1&q={label1}"
 
 @                    300 IN CAA 0   issue "letsencrypt.org"
 @                    300 IN CAA 0   issuewild "letsencrypt.org"
@@ -30,6 +37,10 @@ _redirect._        86400 IN TXT     "v=txtv0;type=host;to=https://www.google.com
 ; kubecon seattle talk 2018
 *.kubecon                                   86400 IN A       45.85.238.5
 *.kubecon                                   86400 IN AAAA    2a0e:c885:5::1
+
+; prevent multiple level wildcards
+*.*.kubecon                                 86400 IN A       127.0.0.1
+*.*.kubecon                                 86400 IN AAAA    ::1
 
 _redirect._.kubecon                         86400 IN TXT     "v=txtv0;type=host;to=https://www.google.com/search?btnI=1&q={label1}"
 

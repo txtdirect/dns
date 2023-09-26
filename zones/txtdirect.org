@@ -1,15 +1,15 @@
-@                   3600 IN SOA     nsx.gitns.com. domains.nzt.ventures. (
-                                      2021050402   ; serial
+@                   3600 IN SOA     ns.gitns.com. domains.nzt.ventures. (
+                                      2023092601   ; serial
                                       5m           ; refresh
                                       5m           ; retry
                                       1w           ; expire
                                       12h    )     ; minimum
 
-@                  86400 IN NS      nsx.gitns.com.
-@                  86400 IN NS      nsx.gitns.nl.
-@                  86400 IN NS      nsx.gitns.net.
-@                  86400 IN NS      nsx.gitns.org.
-@                  86400 IN NS      nsx.gitns.io.
+@                  86400 IN NS      ns.gitns.com.
+@                  86400 IN NS      ns.gitns.nl.
+@                  86400 IN NS      ns.gitns.net.
+@                  86400 IN NS      ns.gitns.org.
+@                  86400 IN NS      ns.gitns.io.
 
 
 ; short links + default redirect
